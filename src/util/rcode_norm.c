@@ -342,7 +342,7 @@ main(int argc, char *argv[])
 		fputs(": cannot open for writing\n", stderr);
 		return 1;
 	}
-	SET_FILE_BINARY(dc.finp);	/* starting assumption */
+	SET_FILE_BINARY(nc.finp);	/* starting assumption */
 	SET_FILE_BINARY(stdout);
 #ifdef getc_unlocked			/* avoid stupid semaphores */
 	flockfile(nc.finp);
