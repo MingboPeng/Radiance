@@ -1,0 +1,80 @@
+name: Run Unit tests
+
+on:
+  push:
+    branches: [ RendersTest ]
+
+jobs:
+
+  Test_Windows:
+    name: Test Windows build
+    runs-on: windows-latest
+    steps:
+      - name: "Checkout Master Branch"
+        uses: actions/checkout@v2
+        with:
+          ref: RendersTest
+      
+      - name: unzip artifacts
+        run: |
+          unzip Radiance_Windows_both.zip
+          unzip WindowsBuild/Radiance_Windows.zip 
+      
+      - name: Display structure of downloaded files
+        run: ls -R
+
+      - name: install perl
+        uses: shogo82148/actions-setup-perl@v1
+        with:
+          perl-version: '5.30'
+      
+      - name: run tests -renders
+        shell: cmd
+        run: |
+          set RAYPATH=.;${{ github.workspace }}\lib
+          set PATH=%PATH%;${{ github.workspace }}\bin
+          rtrace -version
+
+          cd ./test/renders/
+          make clean
+          make -k
+  
+  Test_Linux:
+    name: "Test for Linux"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout Master Branch"
+        uses: actions/checkout@v2
+        with:
+          ref: RendersTest
+
+      - name: unzip artifacts
+        run: |
+          unzip Radiance_Linux.zip
+          ls
+          echo "========== Extracting tar.gz ==========="
+          tar -xvf radiance-*-Linux.tar.gz
+          ls
+          echo "========== Extracting tar ==========="
+          
+
+      - name: copy compiled folder
+        run: |
+          mkdir buildRad
+          sudo cp -avr ./radiance-*-Linux/usr/local/radiance ./buildRad
+
+      - name: Display structure of downloaded files
+        run: ls -R
+
+      - name: run tests -renders
+        run: |
+          export RAYPATH=.:${{ github.workspace }}/buildRad/radiance/lib
+          export PATH=$PATH:${{ github.workspace }}/buildRad/radiance/bin
+          rtrace -version
+
+          cd ./test/renders/
+          make clean
+          make -j8
+
+      
