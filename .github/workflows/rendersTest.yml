@@ -14,7 +14,17 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: RendersTest
+          fetch-depth: '0'
       
+      - name: copy radiance
+        run: |
+          git fetch
+          git checkout RendersTest
+          cp Radiance_Windows_both.zip ../Radiance_Windows_both.zip
+          git checkout master
+          cp ../Radiance_Windows_both.zip Radiance_Windows_both.zip
+        shell: bash
+
       - name: unzip artifacts
         run: |
           unzip Radiance_Windows_both.zip
@@ -48,6 +58,16 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: RendersTest
+          fetch-depth: '0'
+
+      - name: copy radiance
+        run: |
+          git fetch
+          git checkout RendersTest
+          cp Radiance_Linux.zip ../Radiance_Linux.zip
+          git checkout master
+          cp ../Radiance_Linux.zip Radiance_Linux.zip
+        shell: bash
 
       - name: unzip artifacts
         run: |
