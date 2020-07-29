@@ -47,7 +47,7 @@ jobs:
 
           cd ./test/renders/
           make clean
-          make -k
+          make -k -j8
   
   Test_Linux:
     name: "Test for Linux"
