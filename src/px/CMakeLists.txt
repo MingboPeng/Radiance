@@ -177,10 +177,10 @@ install(TARGETS
 )
 
 if(WIN32)
-  install(PROGRAMS falsecolor.pl
+  install(PROGRAMS falsecolor.exe
     DESTINATION "bin"
   )
-  file(COPY falsecolor.pl
+  file(COPY falsecolor.exe
     DESTINATION "${CMAKE_BINARY_DIR}/bin/Release"
   )
 else()
