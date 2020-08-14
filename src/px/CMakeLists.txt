@@ -177,12 +177,13 @@ install(TARGETS
 )
 
 if(WIN32)
+  add_custom_target(px_perl ALL
+    COMMAND pp ${CMAKE_CURRENT_SOURCE_DIR}/falsecolor.pl -o ${CMAKE_CURRENT_SOURCE_DIR}/falsecolor.exe -d
+  )
   install(PROGRAMS falsecolor.exe
     DESTINATION "bin"
   )
-  file(COPY falsecolor.exe
-    DESTINATION "${CMAKE_BINARY_DIR}/bin/Release"
-  )
+
 else()
   install_and_copy_without_extension(
     falsecolor.pl
