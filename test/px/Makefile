@@ -61,7 +61,7 @@ test-psign:
 	rm -f psign.hdr
 
 test-falsecolor:	test.hdr
-	perl ../../src/px/falsecolor.pl -s 2e5 -log 5 -i test.hdr > false.hdr
+	falsecolor -s 2e5 -log 5 -i test.hdr > false.hdr
 	$(HDR_CMP) ref/false.hdr false.hdr
 	rm -f false.hdr
 

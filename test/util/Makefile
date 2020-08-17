@@ -75,7 +75,7 @@ test-genskyvec:	test-dctimestep
 
 test-dctimestep:	test.mtx
 	gensky 3 21 10:15PST +s -g .3 -g 2.5 -a 36 -o 124 \
-		| perl ../../src/util/genskyvec.pl -m 1 -c .92 1.03 1.2 \
+		| genskyvec -m 1 -c .92 1.03 1.2 \
 		| dctimestep '!rmtxop -ff -t test.mtx' > dctimestep.mtx
 	radcompare ref/dctimestep.mtx dctimestep.mtx
 	rm -f dctimestep.mtx
