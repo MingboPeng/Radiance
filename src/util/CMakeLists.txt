@@ -169,7 +169,7 @@ file(COPY
 )
 
 if(WIN32)
-  add_custom_target(bsdfview ALL
+   add_custom_target(bsdfview ALL
     COMMAND pp ${CMAKE_CURRENT_SOURCE_DIR}/bsdfview.pl -o ${CMAKE_CURRENT_SOURCE_DIR}/bsdfview.exe -d
   )
   add_custom_target(genBSDF ALL
@@ -193,8 +193,19 @@ if(WIN32)
   add_custom_target(objview ALL
     COMMAND pp ${CMAKE_CURRENT_SOURCE_DIR}/objview.pl -o ${CMAKE_CURRENT_SOURCE_DIR}/objview.exe -d
   )
-
-  install(PROGRAMS
+  add_custom_target(genambpos ALL
+    COMMAND pp ${CMAKE_CURRENT_SOURCE_DIR}/genambpos.pl -o ${CMAKE_CURRENT_SOURCE_DIR}/genambpos.exe -d
+  )
+  add_custom_target(genklemsamp ALL
+    COMMAND pp ${CMAKE_CURRENT_SOURCE_DIR}/genklemsamp.pl -o ${CMAKE_CURRENT_SOURCE_DIR}/genklemsamp.exe -d
+  )
+  add_custom_target(rcode2bmp ALL
+    COMMAND pp ${CMAKE_CURRENT_SOURCE_DIR}/rcode2bmp.pl -o ${CMAKE_CURRENT_SOURCE_DIR}/rcode2bmp.exe -d
+  )
+  add_custom_target(rtpict ALL
+    COMMAND pp ${CMAKE_CURRENT_SOURCE_DIR}/rtpict.pl -o ${CMAKE_CURRENT_SOURCE_DIR}/rtpict.exe -d
+  )
+ install(PROGRAMS
     bsdfview.exe
     genBSDF.exe
     genklemsamp.exe
@@ -203,6 +214,10 @@ if(WIN32)
     ltview.exe
     objpict.exe
     objview.exe
+    genambpos.exe
+    genklemsamp.exe
+    rcode2bmp.exe
+    rtpict.exe
     DESTINATION "bin"
   )
 else()
@@ -212,7 +227,7 @@ else()
     dayfact.csh
     fieldcomb.csh
     genBSDF.pl
-    genambpos.csh
+    genambpos.pl
     genklemsamp.pl
     genskyvec.pl
     glare.csh

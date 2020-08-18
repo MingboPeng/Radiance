@@ -1,4 +1,4 @@
-# RCSid $Id: Makefile,v 1.7 2020/07/17 23:02:10 greg Exp $
+# RCSid $Id: Makefile,v 1.8 2020/08/18 19:33:58 greg Exp $
 #
 # Unit tests for tools built in src/util but not covered by test/renders
 #

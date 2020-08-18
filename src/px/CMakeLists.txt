@@ -177,13 +177,17 @@ install(TARGETS
 )
 
 if(WIN32)
-  add_custom_target(px_perl ALL
-    COMMAND pp ${CMAKE_CURRENT_SOURCE_DIR}/falsecolor.pl -o ${CMAKE_CURRENT_SOURCE_DIR}/falsecolor.exe -d
+  add_custom_target(perl ALL
+    COMMAND pp ${CMAKE_CURRENT_SOURCE_DIR}/falsecolor.pl -o
+    ${CMAKE_CURRENT_SOURCE_DIR}/falsecolor.exe -d
   )
-  install(PROGRAMS falsecolor.exe
+  add_custom_target(phisto ALL
+    COMMAND pp ${CMAKE_CURRENT_SOURCE_DIR}/phisto.pl -o
+    ${CMAKE_CURRENT_SOURCE_DIR}/phisto.exe -d
+  )
+  install(PROGRAMS falsecolor.exe phisto.exe
     DESTINATION "bin"
   )
-
 else()
   install_and_copy_without_extension(
     falsecolor.pl
