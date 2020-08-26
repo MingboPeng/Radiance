@@ -2,6 +2,7 @@
 # RCSid: $Id: tradinstall.csh,v 2.10 2019/05/01 16:47:54 greg Exp $
 # Install correct version of trad for wish or wish4.0
 #
+cd $0:h
 set instdir = $1
 set libdir = $2
 
