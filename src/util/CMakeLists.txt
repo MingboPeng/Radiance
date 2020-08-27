@@ -202,7 +202,7 @@ if(WIN32)
   add_custom_target(rtpict ALL
     COMMAND pp ${CMAKE_CURRENT_SOURCE_DIR}/rtpict.pl -o ${CMAKE_CURRENT_SOURCE_DIR}/rtpict.exe -d
   )
- install(PROGRAMS
+  install(PROGRAMS
     bsdfview.exe
     genBSDF.exe
     genklemsamp.exe
@@ -239,12 +239,12 @@ else()
     vinfo.csh
   )
   add_custom_target(trad ALL
-    COMMAND echo Installing tradinstall
-    COMMAND sudo csh -f ${CMAKE_CURRENT_SOURCE_DIR}/tradinstall.csh ${CMAKE_BINARY_DIR}/bin ${CMAKE_BINARY_DIR}/lib
+    COMMAND echo installing trad
+    COMMAND csh -f ${CMAKE_CURRENT_SOURCE_DIR}/tradinstall.csh ../../build/bin ../../build/lib
   )
   install(FILES
     ${CMAKE_BINARY_DIR}/bin/trad
     DESTINATION "bin"
+    PERMISSIONS OWNER_EXECUTE OWNER_WRITE OWNER_READ GROUP_EXECUTE GROUP_READ
   )
 endif()
-
