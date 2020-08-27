@@ -239,7 +239,6 @@ else()
     vinfo.csh
   )
   add_custom_target(trad ALL
-    COMMAND echo installing trad
     COMMAND csh -f ${CMAKE_CURRENT_SOURCE_DIR}/tradinstall.csh ../../build/bin ../../build/lib
   )
   install(FILES
