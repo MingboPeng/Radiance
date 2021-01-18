@@ -19,9 +19,14 @@
   #define execvp _execvp
 #else
   #include <sys/param.h>
+  #include <sys/types.h>
   typedef pid_t RT_PID;
 #endif
-#include <sys/types.h>
+
+#if defined(_MSC_VER)
+#include <BaseTsd.h>
+typedef SSIZE_T ssize_t;
+#endif
 
 #include "paths.h"
 
