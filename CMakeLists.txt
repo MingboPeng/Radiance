@@ -1,3 +1,5 @@
+# RCSid $Id$
+
 cmake_minimum_required(VERSION 3.12)
 cmake_policy(SET CMP0020 NEW)
 cmake_policy(SET CMP0048 NEW)

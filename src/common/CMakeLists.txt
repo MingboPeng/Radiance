@@ -1,3 +1,5 @@
+# RCSid $Id$
+
 set(rtrad_SOURCES
   addobjnotify.c
   badarg.c

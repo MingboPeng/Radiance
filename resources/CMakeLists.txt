@@ -1,3 +1,5 @@
+# RCSid $Id$
+
 add_subdirectory(cmake_tests)
 
 file(COPY fonts/helvet.fnt

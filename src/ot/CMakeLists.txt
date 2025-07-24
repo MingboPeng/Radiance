@@ -1,3 +1,5 @@
+# RCSid $Id$
+
 add_executable(getbbox
   bbox.c
   getbbox.c

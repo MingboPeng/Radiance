@@ -1,3 +1,5 @@
+# RCSid $Id$
+
 add_executable(cnt cnt.c)
 target_link_libraries(cnt rtrad)
 

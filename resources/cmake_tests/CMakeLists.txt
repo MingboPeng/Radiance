@@ -1,3 +1,5 @@
+# RCSid $Id$
+
 include(FindPerl)
 
 set(resources_dir "${CMAKE_SOURCE_DIR}/resources")

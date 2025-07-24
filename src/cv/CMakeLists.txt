@@ -1,3 +1,5 @@
+# RCSid $Id$
+
 add_executable(ies2rad ies2rad.c)
 target_link_libraries(ies2rad rtrad)
 

@@ -1,3 +1,5 @@
+# RCSid $Id$
+
 if(UNIX)
   find_library(LIB_M m DOC "Path to libm")
   if(NOT LIB_M)

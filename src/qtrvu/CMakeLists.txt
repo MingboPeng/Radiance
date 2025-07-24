@@ -1,3 +1,5 @@
+# RCSid $Id$
+
 qt5_wrap_cpp(rvu_moc rvuwidget.h mainwindow.h)
 qt5_wrap_ui(rvu_ui mainwindow.ui)
 qt5_wrap_ui(exposure_dialog_ui exposuredialog.ui)

@@ -1,3 +1,5 @@
+# RCSid $Id$
+
 set(common_src mfio.c misc.c syscalls.c)
 
 add_executable(bgraph bgraph.c mgvars.c mgraph.c)

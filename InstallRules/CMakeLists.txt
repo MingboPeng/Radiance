@@ -1,3 +1,5 @@
+# RCSid $Id$
+
 if(X11_FOUND)
   get_filename_component(X11_LIBRARY_DIR ${X11_X11_LIB} PATH)
 endif()

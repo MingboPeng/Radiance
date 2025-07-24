@@ -1,3 +1,5 @@
+# RCSid $Id$
+
 add_executable(genrhgrid genrhgrid.c holo.c)
 target_link_libraries(genrhgrid rtrad)
 

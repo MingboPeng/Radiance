@@ -1,3 +1,5 @@
+# RCSid $Id$
+
 add_executable(pfilt pf2.c pf3.c pfilt.c)
 target_link_libraries(pfilt rtrad)
 
