@@ -108,6 +108,9 @@ if(BUILD_LIBTIFF)
         "-Djpeg=OFF"
         "-Dzlib=OFF"
         "-Dwebp=OFF"
+        "-Dtiff-tools=OFF"
+        "-Dtiff-tests=OFF"
+        "-Dtiff-docs=OFF"
         "../libtiff"
       INSTALL_COMMAND ""
     )
