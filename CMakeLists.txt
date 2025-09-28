@@ -108,6 +108,7 @@ if(BUILD_LIBTIFF)
         "-Djpeg=OFF"
         "-Dzlib=OFF"
         "-Dwebp=OFF"
+        "-Dlzma=OFF"
         "-Dtiff-tools=OFF"
         "-Dtiff-tests=OFF"
         "-Dtiff-docs=OFF"
@@ -122,7 +123,13 @@ if(BUILD_LIBTIFF)
       CMAKE_ARGS
         "-DBUILD_SHARED_LIBS=OFF"
         "-DCMAKE_BUILD_TYPE=Release"
+        "-Djpeg=OFF"
         "-Dzlib=OFF"
+        "-Dwebp=OFF"
+        "-Dlzma=OFF"
+        "-Dtiff-tools=OFF"
+        "-Dtiff-tests=OFF"
+        "-Dtiff-docs=OFF"
         "../libtiff"
       INSTALL_COMMAND ""
     )
