@@ -103,10 +103,11 @@ if(BUILD_LIBTIFF)
       URL_MD5 ${LIBTIFF_MD5}
       CMAKE_GENERATOR "NMake Makefiles"
       CMAKE_ARGS
-        "-UHAVE_UNISTD_H"
         "-DBUILD_SHARED_LIBS=OFF"
         "-DCMAKE_BUILD_TYPE=Release"
+        "-Djpeg=OFF"
         "-Dzlib=OFF"
+        "-Dwebp=OFF"
         "../libtiff"
       INSTALL_COMMAND ""
     )
